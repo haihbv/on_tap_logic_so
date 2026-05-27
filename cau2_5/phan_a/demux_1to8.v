@@ -1,0 +1,22 @@
+module demux_1to8(
+    input d,                // loi vao
+    input [2:0] s,          // chon kenh
+    output reg [7:0] y      // loi ra
+);
+
+    always @(*) begin
+        y = 8'd0;
+
+        case (s)
+            3'b000: y[0] = d;
+            3'b001: y[1] = d;
+            3'b010: y[2] = d;
+            3'b011: y[3] = d;
+            3'b100: y[4] = d;
+            3'b101: y[5] = d;
+            3'b110: y[6] = d;
+            3'b111: y[7] = d;
+        endcase
+    end
+
+endmodule
